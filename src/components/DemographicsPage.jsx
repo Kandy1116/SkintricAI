@@ -13,26 +13,13 @@ const DemographicsPage = ({ onBack }) => {
     gender: null,
   });
 
-  useEffect(() => {
-    if (demographics) {
-      const getTopPick = (category) => {
-        if (!demographics[category]) return null;
-        return Object.keys(demographics[category]).reduce((a, b) => 
-          demographics[category][a] > demographics[category][b] ? a : b
-        );
-      };
-      setUserSelections({
-        race: getTopPick('race'),
-        age: getTopPick('age'),
-        gender: getTopPick('gender'),
-      });
-    }
-  }, [demographics]);
+
 
   const handleUpload = async (base64Image) => {
     setIsLoading(true);
     setError(null);
     setDemographics(null); // Clear previous results
+    setUserSelections({ race: null, age: null, gender: null }); // Clear selections
     try {
       const response = await fetch('https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo', {
         method: 'POST',
@@ -46,6 +33,17 @@ const DemographicsPage = ({ onBack }) => {
 
       if (data.success) {
         setDemographics(data.data);
+        const getTopPick = (category) => {
+          if (!data.data[category]) return null;
+          return Object.keys(data.data[category]).reduce((a, b) => 
+            data.data[category][a] > data.data[category][b] ? a : b
+          );
+        };
+        setUserSelections({
+          race: getTopPick('race'),
+          age: getTopPick('age'),
+          gender: getTopPick('gender'),
+        });
       } else {
         setError(data.message || 'An unknown error occurred.');
       }
@@ -60,10 +58,10 @@ const DemographicsPage = ({ onBack }) => {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-100 font-sans">
+    <div className="flex h-screen bg-gray-100 font-sans overflow-hidden">
       <Sidebar selections={userSelections} />
-      <main className="flex-1 p-[8px]">
-        <header className="mb-8 flex justify-between items-center">
+      <main className="flex-1 p-6 overflow-y-auto">
+        <header className="mb-6 flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold text-gray-800">A.I. Demographics</h1>
             <p className="text-gray-500">Upload a photo to begin analysis.</p>
@@ -75,13 +73,13 @@ const DemographicsPage = ({ onBack }) => {
 
         <ImageUpload onUpload={handleUpload} isLoading={isLoading} />
 
-        {error && <p className="text-red-500 mt-6 text-center">{error}</p>}
+        {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
 
         {demographics && (
-          <div className="mt-8">
+          <div className="mt-6 relative z-20">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">YOUR RESULTS</h2>
-            <p className="text-gray-500 mb-6">Click on a score to update your actual attributes in the left sidebar.</p>
-            <DemographicsResults data={demographics} onSelect={handleSelection} />
+            <p className="text-gray-500 mb-4">Click on a score to update your actual attributes in the left sidebar.</p>
+            <DemographicsResults key={JSON.stringify(demographics)} data={demographics} onSelect={handleSelection} />
           </div>
         )}
       </main>

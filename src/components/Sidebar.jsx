@@ -11,9 +11,9 @@ const Sidebar = ({ selections }) => {
   return (
     <aside className="w-80 bg-white p-[8px] border-r border-gray-200">
       <h2 className="text-lg font-bold text-gray-800 mb-2">SKINSTRIC</h2>
-      <p className="text-sm text-gray-500 mb-8">A.I. ANALYSIS</p>
+      <p className="text-sm text-gray-500 mb-6">A.I. ANALYSIS</p>
       
-      <div className="space-y-6">
+      <div className="space-y-4">
         <h3 className="text-md font-semibold text-gray-800 border-b pb-2">YOUR ACTUALS</h3>
         {renderSelection('Race', selections.race)}
         {renderSelection('Age', selections.age)}
