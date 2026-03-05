@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ImageUpload from './ImageUpload';
 import DemographicsResults from './DemographicsResults';
 import Sidebar from './Sidebar';
+import Header from './Header';
 
 const DemographicsPage = ({ onBack }) => {
   const [demographics, setDemographics] = useState(null);
@@ -61,15 +62,7 @@ const DemographicsPage = ({ onBack }) => {
     <div className="flex h-screen bg-gray-100 font-sans overflow-hidden">
       <Sidebar selections={userSelections} />
       <main className="flex-1 p-6 overflow-y-auto">
-        <header className="mb-6 flex justify-between items-center">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-800">A.I. Demographics</h1>
-            <p className="text-gray-500">Upload a photo to begin analysis.</p>
-          </div>
-          <button onClick={onBack} className="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors">
-            Back to Home
-          </button>
-        </header>
+        <Header />
 
         <ImageUpload onUpload={handleUpload} isLoading={isLoading} />
 

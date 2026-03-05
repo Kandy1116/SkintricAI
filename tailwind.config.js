@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Roobert', 'Rubik', 'sans-serif'],
-        mono: ['Rubik', 'monospace'],
+        sans: ['Inter', 'sans-serif'],
+        mono: ['Inter', 'monospace'],
       },
       fontSize: {
         '[60px]': '60px',
