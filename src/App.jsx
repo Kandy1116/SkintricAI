@@ -4,6 +4,7 @@ import LandingPage from './components/LandingPage';
 import InputPage from './components/InputPage';
 import ProcessingPage from './components/ProcessingPage';
 import ThankYouPage from './components/ThankYouPage';
+import AnalysisPage from './components/AnalysisPage';
 
 function App() {
   const [history, setHistory] = useState(['landing']);
@@ -69,8 +70,10 @@ function App() {
         return <InputPage key="city" title="WHAT CITY ARE YOU IN?" placeholder="Enter your city" onContinue={handleCityContinue} onBack={handleBack} />;
             case 'processing':
         return <ProcessingPage onProcessed={() => replaceAndNavigate('thankyou')} />;
-      case 'thankyou':
-        return <ThankYouPage onProceed={() => navigateTo('demographics')} onBack={handleBack} />;
+            case 'thankyou':
+        return <ThankYouPage onProceed={() => navigateTo('analysis')} onBack={handleBack} />;
+      case 'analysis':
+        return <AnalysisPage onBack={handleBack} />;
       case 'demographics':
         return <DemographicsPage userName={userName} onBack={handleBack} />;
       case 'landing':
