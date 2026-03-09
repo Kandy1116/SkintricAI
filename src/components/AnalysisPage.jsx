@@ -20,13 +20,12 @@ const AnalysisPage = ({ onBack }) => {
           
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center gap-4 cursor-pointer">
-                                                                                    <div className="w-48 h-48 rounded-full border-t border-l border-r border-b border-gray-200 flex items-center justify-center p-[4%]">
+                                                                        <div className="w-48 h-48 rounded-full border border-gray-100 flex items-center justify-center p-[4%]">
               <div className="w-full h-full rounded-full border-2 border-black flex items-center justify-center">
                 <i className="fa-solid fa-camera-retro text-[81px]"></i>
               </div>
             </div>
-            <div className="text-center relative">
-              <div style={{ position: 'absolute', top: '12px', right: '110%', width: '60px', height: '1px', backgroundColor: 'black', transform: 'rotate(-30deg)', transformOrigin: 'right' }}></div>
+            <div className="text-center">
               <p className="font-semibold">ALLOW A.I.</p>
               <p className="text-sm">TO SCAN YOUR FACE</p>
             </div>
@@ -42,7 +41,7 @@ const AnalysisPage = ({ onBack }) => {
 
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center gap-4 cursor-pointer">
-                                                                                    <div className="w-48 h-48 rounded-full border-t border-l border-r border-b border-gray-200 flex items-center justify-center p-[4%]">
+                                                                        <div className="w-48 h-48 rounded-full border border-gray-100 flex items-center justify-center p-[4%]">
               <div className="w-full h-full rounded-full border-2 border-black flex items-center justify-center">
                 <i className="fa-solid fa-image text-[81px]"></i>
               </div>
