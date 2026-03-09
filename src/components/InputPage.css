@@ -47,42 +47,49 @@
  
  /* center */ 
  
- .center-wrapper{ 
-   position:absolute; 
-   top:50%; 
-   left:50%; 
-   transform:translate(-50%,-50%); 
-   width:500px; 
-   height:500px; 
-   display:flex; 
-   align-items:center; 
-   justify-content:center; 
- } 
- 
- /* squares */ 
- 
-  .square{ 
-   position:absolute; 
-   width:380px; 
-   height:380px; 
-   border:1px dotted #999; 
- } 
- 
- .square1{ 
-   animation:spin1 20s linear infinite; 
- } 
- 
- .square2{ 
-   width:500px; 
-   height:500px; 
-   border-color: #bbb;
-   animation:spin2 25s linear infinite reverse; 
- } 
+ .center-wrapper{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:335px;
+  height:335px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
- .square3{
-  width:500px; 
-  height:500px; 
-  border-color: #ddd;
+.analysis-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* squares */
+
+ .square{
+  position:absolute;
+  width:255px;
+  height:255px;
+  border:1px dotted #ccc;
+}
+
+.square1{
+  animation:spin1 20s linear infinite;
+}
+
+.square2{
+  width:335px;
+  height:335px;
+  border:1px dotted #ccc;
+  animation:spin2 25s linear infinite reverse;
+}
+
+.square3{
+ width:335px;
+ height:335px;
+ border:1px dotted #ccc;
   animation:spin3 35s linear infinite;
  } 
  

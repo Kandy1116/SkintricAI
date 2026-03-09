@@ -23,7 +23,7 @@ const ProcessingPage = ({ onProcessed }) => {
 
         <div className="intro-text">
                     <p className="text-gray-500">Processing submission</p>
-                                                  <div className="flex justify-center items-center space-x-4" style={{ gap: '2px', marginTop: '40px' }}>
+                                                            <div className="flex justify-center items-center space-x-6" style={{ marginTop: '40px' }}>
             <div className="dot dot1"></div>
             <div className="dot dot2"></div>
             <div className="dot dot3"></div>
