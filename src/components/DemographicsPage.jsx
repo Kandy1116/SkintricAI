@@ -3,6 +3,7 @@ import ImageUpload from './ImageUpload';
 import DemographicsResults from './DemographicsResults';
 import Sidebar from './Sidebar';
 import Header from './Header';
+import BackButton from './BackButton';
 
 const DemographicsPage = ({ onBack }) => {
   const [demographics, setDemographics] = useState(null);
@@ -63,6 +64,7 @@ const DemographicsPage = ({ onBack }) => {
       <Sidebar selections={userSelections} />
       <main className="flex-1 p-6 overflow-y-auto">
         <Header />
+        <BackButton onClick={onBack} />
 
         <ImageUpload onUpload={handleUpload} isLoading={isLoading} />
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
 
+import BackButton from './BackButton';
+
 const ThankYouPage = ({ onProceed, onBack }) => {
   return (
     <div className="intro-page">
@@ -17,14 +19,7 @@ const ThankYouPage = ({ onProceed, onBack }) => {
         </div>
       </div>
 
-      <div className="back-button" onClick={onBack}>
-        <div className="diamond">
-          <span>
-            <i className="fa-solid fa-chevron-left"></i>
-          </span>
-        </div>
-        <span>BACK</span>
-      </div>
+            <BackButton onClick={onBack} />
 
       <div className="proceed-button" onClick={onProceed}>
         <span>PROCEED</span>

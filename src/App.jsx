@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import DemographicsPage from './components/DemographicsPage';
 import LandingPage from './components/LandingPage';
 import InputPage from './components/InputPage';
@@ -12,13 +12,22 @@ function App() {
 
   const page = history[history.length - 1];
 
-  const navigateTo = (page) => {
+  const navigateTo = useCallback((page) => {
     setHistory(prevHistory => [...prevHistory, page]);
-  };
+  }, []);
 
-  const handleBack = () => {
-    setHistory(prevHistory => prevHistory.slice(0, -1));
-  };
+  const handleBack = useCallback(() => {
+    setHistory(prevHistory => {
+      if (prevHistory.length > 1) {
+        return prevHistory.slice(0, -1);
+      }
+      return prevHistory;
+    });
+  }, []);
+
+  const replaceAndNavigate = useCallback((page) => {
+    setHistory(prevHistory => [...prevHistory.slice(0, -1), page]);
+  }, []);
 
   const handleNameContinue = (name) => {
     setUserName(name);
@@ -58,8 +67,8 @@ function App() {
         return <InputPage key="intro" title="TO START ANALYSIS" placeholder="Introduce Yourself" onContinue={handleNameContinue} onBack={handleBack} />;
       case 'city':
         return <InputPage key="city" title="WHAT CITY ARE YOU IN?" placeholder="Enter your city" onContinue={handleCityContinue} onBack={handleBack} />;
-      case 'processing':
-        return <ProcessingPage onProcessed={() => navigateTo('thankyou')} />;
+            case 'processing':
+        return <ProcessingPage onProcessed={() => replaceAndNavigate('thankyou')} />;
       case 'thankyou':
         return <ThankYouPage onProceed={() => navigateTo('demographics')} onBack={handleBack} />;
       case 'demographics':

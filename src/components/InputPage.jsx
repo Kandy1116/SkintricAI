@@ -3,6 +3,8 @@ import './InputPage.css';
 
 import Header from './Header';
 
+import BackButton from './BackButton';
+
 const InputPage = ({ title, placeholder, onContinue, onBack }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState('');
@@ -61,12 +63,7 @@ const InputPage = ({ title, placeholder, onContinue, onBack }) => {
         </div>
       </div>
 
-      <div className="back-button" onClick={onBack}>
-        <div className="diamond">
-          <span>◀</span>
-        </div>
-        <span>BACK</span>
-      </div>
+            <BackButton onClick={onBack} />
       {error && <p style={{ position: 'fixed', bottom: '100px', left: '50%', transform: 'translateX(-50%)', color: 'red' }}>{error}</p>}
     </div>
   );
