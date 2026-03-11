@@ -33,8 +33,8 @@
 
 /* --- MAIN ICON (BIG CIRCLE) --- */
 .icon-outline {
-  width: 160px; /* Larger than the inner circle */
-  height: 160px;
+  width: 129px; /* Larger than the inner circle */
+  height: 129px;
   border: 1px solid #ccc;
   border-radius: 50%;
   position: absolute;
@@ -48,24 +48,24 @@
 }
 
 .icon-wrapper {
-  width: 146px;
-  height: 146px;
+  width: 117px;
+  height: 117px;
   border: 2px solid #222;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 122px; /* Increased font size */
+  font-size: 98px; /* Increased font size */
   z-index: 10;
   background-color: #fff; /* To hide the squares behind it */
 }
 
 .icon-wrapper .fa-camera-retro {
-  font-size: 118px;
+  font-size: 95px;
 }
 
 .icon-wrapper .fa-image {
-  font-size: 125px;
+  font-size: 101px;
 }
 
 /* --- CONNECTOR LINE --- */
@@ -98,7 +98,7 @@
 /* --- LEFT SIDE --- */
 .permission.left .connector {
   left: 50%;
-  transform: rotate(-45deg) translateX(80px);
+  transform: rotate(-45deg) translateX(65px);
   transform-origin: left;
 }
 .permission.left .dot {
@@ -106,8 +106,8 @@
 }
 .permission.left .label {
   position: absolute;
-  left: calc(50% + 124px);
-  top: calc(50% - 134px);
+  left: calc(50% + 113px);
+  top: calc(50% - 123px);
   text-align: left;
   white-space: nowrap;
 }
@@ -115,7 +115,7 @@
 /* --- RIGHT SIDE --- */
 .permission.right .connector {
   left: 50%;
-  transform: rotate(135deg) translateX(80px);
+  transform: rotate(135deg) translateX(65px);
   transform-origin: left;
 }
 .permission.right .dot {
@@ -123,8 +123,8 @@
 }
 .permission.right .label {
   position: absolute;
-  left: calc(50% - 190px);
-  top: calc(50% + 125px);
+  left: calc(50% - 178px);
+  top: calc(50% + 113px);
   text-align: right;
 }
 

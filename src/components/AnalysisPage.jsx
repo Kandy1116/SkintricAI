@@ -23,7 +23,7 @@ const AnalysisPage = ({ onBack }) => {
       <Header />
       <div className="instruction">TO START ANALYSIS</div>
 
-      <div className="flex-grow flex items-center justify-around">
+      <div className="flex-grow flex items-center justify-center gap-x-[23rem]">
         <LabeledIcon icon="fa-camera-retro" label={leftLabel} side="left" />
         <LabeledIcon icon="fa-image" label={rightLabel} side="right" />
       </div>
