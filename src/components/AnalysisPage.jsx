@@ -8,13 +8,13 @@ import './LabeledIcon.css'; // Import the new component's styles
 const AnalysisPage = ({ onBack }) => {
   const leftLabel = (
     <>
-      ALLOW A.I. <br /> TO SCAN YOUR FACE
+      ALLOW A.I. <br /> <span style={{ color: '#11AA1C' }}>TO SCAN YOUR FACE</span>
     </>
   );
 
   const rightLabel = (
     <>
-      ALLOW A.I. <br /> ACCESS GALLERY
+      ALLOW A.I. <br /> <span style={{ color: '#11AA1C' }}>ACCESS GALLERY</span>
     </>
   );
 

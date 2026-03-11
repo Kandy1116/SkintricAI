@@ -7,8 +7,10 @@ const LabeledIcon = ({ icon, label, side }) => {
       <div className="square square1"></div>
       <div className="square square2"></div>
       <div className="square square3"></div>
-      <div className="icon-wrapper">
-        <i className={`fa-solid ${icon}`}></i>
+      <div className="icon-outline">
+        <div className="icon-wrapper">
+          <i className={`fa-solid ${icon}`}></i>
+        </div>
       </div>
       <div className="connector">
         <div className="dot"></div>
