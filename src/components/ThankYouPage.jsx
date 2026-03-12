@@ -13,9 +13,9 @@ const ThankYouPage = ({ onProceed, onBack }) => {
         <div className="square square2"></div>
         <div className="square square3"></div>
 
-        <div className="intro-text">
+        <div className="intro-text flex flex-col items-center">
           <h1>Thank you!</h1>
-          <p className="text-sm text-gray-500 mt-2">Proceed for the next step</p>
+          <p className="text-lg text-gray-500 mt-2">Proceed for the next step</p>
         </div>
       </div>
 

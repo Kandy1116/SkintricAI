@@ -6,16 +6,15 @@ import Header from './Header';
 import BackButton from './BackButton';
 
 const InputPage = ({ title, placeholder, onContinue, onBack }) => {
-  const [isEditing, setIsEditing] = useState(false);
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
   const inputRef = useRef(null);
 
   useEffect(() => {
-    if (isEditing && inputRef.current) {
+    if (inputRef.current) {
       inputRef.current.focus();
     }
-  }, [isEditing]);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +31,7 @@ const InputPage = ({ title, placeholder, onContinue, onBack }) => {
   };
 
   return (
-    <div className="intro-page">
+    <div className="intro-page text-input-page">
             <Header />
       <div className="instruction">{title}</div>
 
@@ -41,25 +40,18 @@ const InputPage = ({ title, placeholder, onContinue, onBack }) => {
         <div className="square square2"></div>
         <div className="square square3"></div>
 
-                <div className="intro-text" onClick={() => setIsEditing(true)}>
-          {!isEditing ? (
-            <>
-              <div className="click-text">CLICK TO TYPE</div>
-              <h1>{placeholder}</h1>
-            </>
-          ) : (
+                <div className="intro-text">
             <form onSubmit={handleSubmit}>
               <input
-                ref={inputRef}
-                type="text"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                onBlur={() => !value && setIsEditing(false)}
-                className="intro-text-input"
-                style={{ width: `clamp(300px, ${value.length * 28}px, 80vw)` }}
-              />
+                  ref={inputRef}
+                  type="text"
+                  placeholder={placeholder}
+                  value={value}
+                  onChange={(e) => setValue(e.target.value)}
+                  className="intro-text-input"
+                  style={{ width: `clamp(300px, calc(${Math.max(value.length, placeholder.length)}ch + 4px), 450px)` }}
+                />
             </form>
-          )}
         </div>
       </div>
 

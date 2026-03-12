@@ -13,7 +13,7 @@ const ProcessingPage = ({ onProcessed }) => {
   }, [onProcessed]);
 
   return (
-    <div className="intro-page">
+    <div className="intro-page processing-page">
       <Header />
 
       <div className="center-wrapper">
@@ -21,12 +21,12 @@ const ProcessingPage = ({ onProcessed }) => {
         <div className="square square2"></div>
         <div className="square square3"></div>
 
-        <div className="intro-text">
-                    <p className="text-gray-500">Processing submission</p>
-                                                            <div className="flex justify-center items-center space-x-6" style={{ marginTop: '40px' }}>
-            <div className="dot dot1"></div>
-            <div className="dot dot2"></div>
-            <div className="dot dot3"></div>
+        <div className="loader-container">
+          <p className="processing-text">Processing submission</p>
+          <div className="dots">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
       </div>

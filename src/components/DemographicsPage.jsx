@@ -63,6 +63,9 @@ const DemographicsPage = ({ onBack }) => {
     <div className="flex h-screen bg-gray-100 font-sans overflow-hidden">
       <Sidebar selections={userSelections} />
       <main className="flex-1 p-6 overflow-y-auto">
+        <div className="square square1"></div>
+        <div className="square square2"></div>
+        <div className="square square3"></div>
         <Header />
         <BackButton onClick={onBack} />
 

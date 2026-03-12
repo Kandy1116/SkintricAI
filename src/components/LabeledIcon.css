@@ -7,28 +7,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 /* --- ROTATING SQUARES --- */
 .permission .square {
   position: absolute;
   animation-duration: 40s;
-  transform: rotate(45deg);
 }
 .permission .square.square1 {
-  width: 175px; height: 175px;
-  animation: spin1 40s linear infinite;
-  border: 1px dotted #dcdcdc;
+  width: 390px; height: 390px;
+  animation: spin1 70s linear infinite;
+  border: 2.75px dotted #b0b0b0;
+  transform: translate(-10px, -10px) rotate(15deg);
+  animation-delay: 0s;
 }
 .permission .square.square2 {
-  width: 187.5px; height: 187.5px;
-  animation: spin2 40s linear infinite reverse;
-  border: 1px dotted #b0b0b0;
+  width: 390px; height: 390px;
+  animation: spin2 80s linear infinite;
+  border: 2.75px dotted #c0c0c0;
+  transform: rotate(30deg);
+  animation-delay: 1s;
 }
 .permission .square.square3 {
-  width: 225px; height: 225px;
-  animation: spin3 40s linear infinite;
-  border: 1px dotted #c0c0c0;
+  width: 390px; height: 390px;
+  animation: spin3 80s linear infinite;
+  border: 2.75px dotted #dcdcdc;
+  transform: translate(10px, 10px) rotate(45deg);
+  animation-delay: 2s;
 }
 
 /* --- MAIN ICON (BIG CIRCLE) --- */
@@ -106,8 +112,8 @@
 }
 .permission.left .label {
   position: absolute;
-  left: calc(50% + 113px);
-  top: calc(50% - 123px);
+  left: calc(50% + 115px);
+  top: calc(50% - 125px);
   text-align: left;
   white-space: nowrap;
 }
@@ -123,8 +129,8 @@
 }
 .permission.right .label {
   position: absolute;
-  left: calc(50% - 178px);
-  top: calc(50% + 113px);
+  left: calc(50% - 180px);
+  top: calc(50% + 115px);
   text-align: right;
 }
 
