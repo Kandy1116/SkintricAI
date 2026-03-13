@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState } from 'react';
+import React, { useRef, useCallback, useState, useEffect } from 'react';
 import Webcam from 'react-webcam';
 
 const Camera = ({ onCapture, onBack }) => {
@@ -8,6 +8,19 @@ const Camera = ({ onCapture, onBack }) => {
     const imageSrc = webcamRef.current.getScreenshot();
     onCapture(imageSrc);
   }, [webcamRef, onCapture]);
+
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) {
+        onBack();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [onBack]);
 
   return (
     <div className="camera-container">
