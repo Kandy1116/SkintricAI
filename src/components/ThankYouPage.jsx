@@ -31,9 +31,9 @@ const ThankYouPage = ({ onProceed, onBack }) => {
 
       <div className={`proceed-button ${isButtonVisible ? 'animate-slide-in-from-left' : ''}`} onClick={onProceed}>
         <span>PROCEED</span>
-        <div className="diamond">
+        <div class="diamond-shape">
           <span>
-            <i className="fa-solid fa-chevron-right"></i>
+            <i class="fa-solid fa-chevron-right"></i>
           </span>
         </div>
       </div>

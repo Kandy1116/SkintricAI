@@ -6,7 +6,7 @@ const BackButton = ({ onClick, variant }) => {
 
   return (
     <div className={buttonClass} onClick={onClick}>
-      <div className="diamond">
+      <div className="diamond-shape">
         <span>
           <i className="fa-solid fa-chevron-left"></i>
         </span>

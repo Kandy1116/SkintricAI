@@ -23,7 +23,7 @@
   font-size: 14px;
   font-weight: 600;
   margin-top: 0;
-  color: #1A1B1C;
+  color: #444;
 }
 
 .diamond-section {
@@ -42,6 +42,34 @@
   place-items: center;
 }
 
+.diamond-outline {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  width: 450px;
+  height: 450px;
+  border: 2px dotted #a0a0a0;
+  transform: rotate(45deg);
+  place-self: center;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+
+.outline-top { border-color: #888888; }
+.outline-left { border-color: #aaaaaa; }
+.outline-right { border-color: #cccccc; }
+.outline-bottom { border-color: #666666; }
+
+.diamond-grid:has(.diamond.top:hover) .outline-top,
+.diamond-grid:has(.diamond.left:hover) .outline-left,
+.diamond-grid:has(.diamond.right:hover) .outline-right,
+.diamond-grid:has(.diamond.bottom:hover) .outline-bottom {
+  opacity: 1;
+}
+
+.diamond.clickable:not(.darker):hover {
+  background: #d9d9d9;
+}
+
 .diamond {
   width: 170px;
   height: 170px;
@@ -52,13 +80,34 @@
   text-align: center;
   transform: rotate(45deg);
   transition: all .35s ease;
-  cursor: pointer;
   opacity: 0;
   animation: fadeSlide .8s ease forwards;
+  z-index: 1;
 }
 
 .diamond.darker {
   background: #e0e0e0;
+}
+
+.diamond.clickable {
+  cursor: pointer;
+}
+
+.diamond.clickable:hover {
+  transform: rotate(45deg) scale(1.08);
+  background: #d9d9d9;
+}
+
+.diamond.clickable.darker:hover {
+  background-color: #c0c0c0;
+}
+
+.disabled-button {
+  cursor: not-allowed;
+}
+
+.disabled-button {
+  cursor: not-allowed;
 }
 
 .diamond span {
@@ -66,11 +115,6 @@
   font-weight: 600;
   font-size: 14px;
   letter-spacing: .5px;
-}
-
-.diamond:hover {
-  transform: rotate(45deg) scale(1.08);
-  background: #d9d9d9;
 }
 
 .top {
@@ -114,16 +158,24 @@
   right: 40px;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 15px;
   font-weight: 600;
   font-size: 12px;
   cursor: pointer;
 }
 
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+
+
 .get-summary-button .diamond-shape {
-  width: 33px;
-  height: 33px;
-  border: 2px solid #000;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #1A1B1C;
   transform: rotate(45deg);
   display: flex;
   align-items: center;
@@ -131,7 +183,9 @@
 }
 
 .get-summary-button .diamond-shape span {
+  display: flex;
   transform: rotate(-45deg);
+  color: #1A1B1C;
 }
 
 @media (max-width: 700px) {

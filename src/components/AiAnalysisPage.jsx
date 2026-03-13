@@ -15,16 +15,20 @@ const AiAnalysisPage = ({ onBack, onGetSummary, onNavigate }) => {
 
       <section className="diamond-section">
         <div className="diamond-grid">
-          <div className="diamond top darker" onClick={() => onNavigate('demographics')}>
+          <div className="diamond-outline outline-top"></div>
+          <div className="diamond-outline outline-left"></div>
+          <div className="diamond-outline outline-right"></div>
+          <div className="diamond-outline outline-bottom"></div>
+          <div className="diamond top darker clickable" onClick={() => {}}>
             <span>DEMOGRAPHICS</span>
           </div>
-          <div className="diamond left">
+          <div className="diamond left disabled-button">
             <span>COSMETIC<br/>CONCERNS</span>
           </div>
-          <div className="diamond right">
+          <div className="diamond right disabled-button">
             <span>SKIN TYPE DETAILS</span>
           </div>
-          <div className="diamond bottom">
+          <div className="diamond bottom disabled-button">
             <span>WEATHER</span>
           </div>
         </div>
@@ -35,7 +39,7 @@ const AiAnalysisPage = ({ onBack, onGetSummary, onNavigate }) => {
         <span>GET SUMMARY</span>
         <div className="diamond-shape">
           <span>
-            <i className="fas fa-play"></i>
+            <i className="fa-solid fa-chevron-right"></i>
           </span>
         </div>
       </div>

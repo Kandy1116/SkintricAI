@@ -1,38 +1,45 @@
 .back-button {
   position: fixed;
   bottom: 40px;
-  left: 40px;
+  left: 20px;
   display: flex;
   align-items: center;
-  gap: 23px;
+  gap: 10px;
   font-weight: 600;
   font-size: 12px;
   cursor: pointer;
   color: #000;
   z-index: 100;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.back-button .diamond {
-  width: 33px;
-  height: 33px;
-  border: 2px solid #1A1B1C;
-  color: #1A1B1C;
+.back-button:hover {
+  opacity: 0.8;
+}
+
+.back-button .diamond-shape {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #000;
   transform: rotate(45deg);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.back-button .diamond span {
+.back-button .diamond-shape span {
+  display: flex;
   transform: rotate(-45deg);
-  font-size: 15px;
 }
 
 .back-button-white {
   color: #fff;
 }
 
-.back-button-white .diamond {
+.back-button-white .diamond-shape {
   border-color: #fff;
+}
+
+.back-button-white .fa-chevron-left {
   color: #fff;
 }

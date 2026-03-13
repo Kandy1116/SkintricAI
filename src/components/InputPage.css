@@ -12,27 +12,27 @@
   right: 40px;
   display: flex;
   align-items: center;
-  gap: 23px;
+  gap: 15px;
   font-weight: 600;
   font-size: 12px;
   cursor: pointer;
   opacity: 0;
 } 
 
-.proceed-button .diamond {
-  width: 33px;
-  height: 33px;
-  border: 2px solid #1A1B1C;
-  color: #1A1B1C;
+.proceed-button .diamond-shape {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #1A1B1C;
   transform: rotate(45deg);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.proceed-button .diamond span {
+.proceed-button .diamond-shape span {
+  display: flex;
   transform: rotate(-45deg);
-  font-size: 15px;
+  color: #1A1B1C;
 }
  
  /* header */ 
