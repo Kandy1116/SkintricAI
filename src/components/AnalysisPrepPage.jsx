@@ -6,8 +6,12 @@ import './InputPage.css';
 const AnalysisPrepPage = ({ onBack, showPopup, onPopupOk, capturedImage }) => {
   useEffect(() => {
     if (showPopup) {
-      alert('Image analyzed successfully!');
-      onPopupOk();
+      const timer = setTimeout(() => {
+        alert('Image analyzed successfully!');
+        onPopupOk();
+      }, 2000); // 2-second delay
+
+      return () => clearTimeout(timer); // Cleanup the timer
     }
   }, [showPopup, onPopupOk]);
 

@@ -9,6 +9,7 @@ import CameraSetupPage from './components/CameraSetupPage';
 import Camera from './components/Camera';
 import ImageUpload from './components/ImageUpload';
 import AnalysisPrepPage from './components/AnalysisPrepPage';
+import AiAnalysisPage from './components/AiAnalysisPage';
 
 function App() {
   const [history, setHistory] = useState(['landing']);
@@ -125,10 +126,12 @@ function App() {
           showPopup={showSuccessPopup} 
           onPopupOk={() => {
             setShowSuccessPopup(false);
-            navigateTo('demographics');
+            navigateTo('ai_analysis');
           }}
           capturedImage={capturedImage} // Pass the image here
         />;
+      case 'ai_analysis':
+        return <AiAnalysisPage onBack={handleBack} onGetSummary={() => navigateTo('demographics')} onNavigate={navigateTo} />;
       case 'demographics':
         return <DemographicsPage userName={userName} demographics={demographics} onBack={handleBack} />;
       case 'landing':
