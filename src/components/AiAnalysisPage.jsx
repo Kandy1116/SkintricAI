@@ -3,7 +3,7 @@ import BackButton from './BackButton';
 import Header from './Header';
 import './AiAnalysisPage.css';
 
-const AiAnalysisPage = ({ onBack, onGetSummary, onNavigate }) => {
+const AiAnalysisPage = ({ onBack, onHome, onNavigate }) => {
   return (
     <div className="ai-analysis-page">
       <Header />
@@ -19,7 +19,7 @@ const AiAnalysisPage = ({ onBack, onGetSummary, onNavigate }) => {
           <div className="diamond-outline outline-left"></div>
           <div className="diamond-outline outline-right"></div>
           <div className="diamond-outline outline-bottom"></div>
-          <div className="diamond top darker clickable" onClick={() => {}}>
+          <div className="diamond top darker clickable" onClick={() => onNavigate('demographics')}>
             <span>DEMOGRAPHICS</span>
           </div>
           <div className="diamond left disabled-button">
@@ -35,14 +35,6 @@ const AiAnalysisPage = ({ onBack, onGetSummary, onNavigate }) => {
       </section>
 
       <BackButton onClick={onBack} />
-      <div className="get-summary-button" onClick={onGetSummary}>
-        <span>GET SUMMARY</span>
-        <div className="diamond-shape">
-          <span>
-            <i className="fa-solid fa-chevron-right"></i>
-          </span>
-        </div>
-      </div>
     </div>
   );
 };

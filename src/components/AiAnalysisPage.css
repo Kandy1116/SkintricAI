@@ -152,41 +152,7 @@
   }
 }
 
-.get-summary-button {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-weight: 600;
-  font-size: 12px;
-  cursor: pointer;
-}
 
-.back-button {
-  display: flex;
-  align-items: center;
-  gap: 23px;
-}
-
-
-
-.get-summary-button .diamond-shape {
-  width: 28px;
-  height: 28px;
-  border: 1px solid #1A1B1C;
-  transform: rotate(45deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.get-summary-button .diamond-shape span {
-  display: flex;
-  transform: rotate(-45deg);
-  color: #1A1B1C;
-}
 
 @media (max-width: 700px) {
   .diamond-grid {

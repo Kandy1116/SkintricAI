@@ -103,6 +103,7 @@ function App() {
   };
 
   const renderPage = () => {
+    console.log(`Rendering page: ${page}`, { demographics });
     switch (page) {
       case 'intro':
         return <InputPage key="intro" title="TO START ANALYSIS" placeholder="Introduce Yourself" onContinue={handleNameContinue} onBack={handleBack} />;
@@ -131,9 +132,9 @@ function App() {
           capturedImage={capturedImage} // Pass the image here
         />;
       case 'ai_analysis':
-        return <AiAnalysisPage onBack={handleBack} onGetSummary={() => navigateTo('demographics')} onNavigate={navigateTo} />;
+        return <AiAnalysisPage onBack={handleBack} onNavigate={navigateTo} />;
       case 'demographics':
-        return <DemographicsPage userName={userName} demographics={demographics} onBack={handleBack} />;
+        return <DemographicsPage userName={userName} demographics={demographics} onBack={handleBack} onHome={() => navigateTo('landing')} />;
       case 'landing':
       default:
         return <LandingPage onTakeTest={() => navigateTo('intro')} />;
