@@ -18,6 +18,22 @@
   cursor: pointer;
   opacity: 0;
 } 
+
+.proceed-button .diamond {
+  width: 33px;
+  height: 33px;
+  border: 2px solid #1A1B1C;
+  color: #1A1B1C;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proceed-button .diamond span {
+  transform: rotate(-45deg);
+  font-size: 15px;
+}
  
  /* header */ 
  
@@ -162,35 +178,7 @@
     position: relative;
   }
  
- /* back button */ 
  
- .back-button{ 
-   position:fixed; 
-   bottom:40px; 
-   left:40px; 
-   display:flex; 
-   align-items:center; 
-      gap: 23px; 
-   font-weight:600;
-   font-size: 12px;
-   cursor: pointer;
- } 
- 
- .diamond{ 
-     width: 33px; 
-  height: 33px; 
-      border:2px solid #1A1B1C; 
-   color: #1A1B1C; 
-   transform:rotate(45deg); 
-   display:flex; 
-   align-items:center; 
-   justify-content:center; 
- } 
- 
- .diamond span{ 
-   transform:rotate(-45deg); 
-   font-size: 15px;
- } 
  
  /* animations */ 
  

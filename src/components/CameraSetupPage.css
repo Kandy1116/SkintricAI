@@ -1,11 +1,48 @@
-.camera-setup-page .center-wrapper {
+.main-content-wrapper {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 300px; /* Reduced from 450px */
+  height: 300px; /* Reduced from 450px */
+}
+
+.camera-setup-page .square {
+  position: absolute;
+}
+
+.camera-setup-page .square.square1 {
+  width: 250px; /* Reduced */
+  height: 250px; /* Reduced */
+  border: 2px dotted var(--color-gray-300);
+  animation: spin1 70s linear infinite;
+}
+
+.camera-setup-page .square.square2 {
+  width: 270px; /* Reduced */
+  height: 270px; /* Reduced */
+  border: 2px dotted var(--color-gray-200);
+  animation: spin2 80s linear infinite reverse;
+}
+
+.camera-setup-page .square.square3 {
+  width: 290px; /* Reduced */
+  height: 290px; /* Reduced */
+  border: 2px dotted var(--color-gray-100);
+  animation: spin3 85s linear infinite;
+}
+
+.camera-setup-page .center-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem; /* Increased from 2rem */
   width: 100%;
-  height: 100%;
 }
 
 .camera-setup-page .camera-icon-container {
@@ -26,9 +63,6 @@
 }
 
 .camera-setup-page .footer-instructions {
-  position: absolute;
-  bottom: 50px;
-  width: 100%;
   text-align: center;
   font-size: 12px;
   font-weight: 600;
@@ -41,9 +75,36 @@
   margin-top: 1rem;
 }
 
+.guideline-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.diamond-bullet {
+  width: 8px;
+  height: 8px;
+  border: 1px solid #000;
+  transform: rotate(45deg);
+}
+
 .camera-setup-page .slider-bar {
-  width: 30%;
-  height: 4px;
+  width: 100%;
+  height: 8px;
   background-color: #ccc;
-  margin: 1rem auto 0;
+}
+
+.slider-container {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slider-arrow {
+  color: #ccc;
 }

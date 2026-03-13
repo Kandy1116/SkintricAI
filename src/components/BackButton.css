@@ -1,0 +1,38 @@
+.back-button {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  color: #000;
+  z-index: 100;
+}
+
+.back-button .diamond {
+  width: 33px;
+  height: 33px;
+  border: 2px solid #1A1B1C;
+  color: #1A1B1C;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button .diamond span {
+  transform: rotate(-45deg);
+  font-size: 15px;
+}
+
+.back-button-white {
+  color: #fff;
+}
+
+.back-button-white .diamond {
+  border-color: #fff;
+  color: #fff;
+}

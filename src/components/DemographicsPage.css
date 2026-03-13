@@ -98,4 +98,10 @@
 
 .category-key {
   text-transform: capitalize;
+  color: #000;
+}
+
+.category-value {
+  color: #000;
+  font-weight: bold;
 }
