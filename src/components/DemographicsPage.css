@@ -1,6 +1,6 @@
 /* Main container for the new page */
 .demographics-v2-page {
-  background-color: #fff;
+  background-color: #f9f9f9;
   color: #000;
   height: 100vh;
   display: flex;
@@ -13,6 +13,7 @@
   text-align: left;
   padding: 0 4rem;
   margin-top: 5rem; /* Space from top */
+  padding-bottom: 2rem;
 }
 
 .ai-analysis-text {
@@ -39,24 +40,27 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1.5fr;
   flex-grow: 1;
-  padding: 2rem 4rem;
-  gap: 2rem;
+  padding: 0 4rem 2rem;
+  gap: 4rem;
   align-items: flex-start;
+  margin-top: 36px;
 }
 
 /* Left-side category navigation */
 .category-nav {
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
 .category-nav-item {
   padding: 1.5rem 1rem;
-  border: 1px solid #eee;
   cursor: pointer;
-  background-color: #f9f9f9;
+  background-color: #f0f0f0;
   color: #333;
   transition: background-color 0.3s ease;
+  border: 1px solid #e0e0e0;
+  border-top: 2px solid #000;
 }
 
 .category-nav-item.active {
@@ -69,6 +73,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   display: block;
+  text-transform: capitalize;
 }
 
 .category-nav-item .category-name {
@@ -85,31 +90,36 @@
 .demographics-center-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
   padding: 2rem;
+  background-color: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  border-top: 2px solid #000;
 }
 
 .top-result-text {
   font-size: 2.5rem;
   font-weight: 500;
-  margin: 0 0 2rem 0;
+  margin: 0;
+  text-transform: capitalize;
+  padding-bottom: 76px;
 }
 
 .circle-progress-container {
   position: relative;
   width: 200px;
   height: 200px;
+  align-self: flex-end;
 }
 
 .circle-progress-svg {
   transform: rotate(-90deg); /* Start from the top */
+  padding-top: 48px;
 }
 
 .progress-background {
   fill: none;
-  stroke: #eee;
+  stroke: #dcdcdc;
   stroke-width: 5;
 }
 
@@ -135,6 +145,9 @@
 /* Right-side confidence list */
 .confidence-list {
   padding: 1rem;
+  background-color: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  border-top: 2px solid #000;
 }
 
 .confidence-header {
@@ -144,7 +157,6 @@
   font-size: 0.8rem;
   color: #555;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #000;
   margin-bottom: 1rem;
 }
 
@@ -174,6 +186,7 @@
 .confidence-items span {
   font-size: 0.9rem;
   color: #333;
+  text-transform: capitalize;
 }
 
 .confidence-items .fa-diamond {
@@ -231,4 +244,10 @@
 .home-button:hover .diamond-shape {
   background-color: #000;
   color: #fff;
+}
+
+@media (min-width: 48rem) {
+  .demographics-main-content {
+    height: 57vh;
+  }
 }
